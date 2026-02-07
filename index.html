@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Secret Note For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Page 1: Secret Note with Envelope -->
+  <div class="page active" id="page1">
+    <h1 class="main-title">A Secret Note For You ❤️</h1>
+    <p class="subtitle">Click the envelope to open it...</p>
+    <div class="envelope" id="envelope">
+      <!-- Floating dots around envelope -->
+      <div class="floating-dots"></div>
+
+      <!-- Top flap -->
+      <div class="envelope-flap-top"></div>
+
+      <!-- Main envelope body with polka dots -->
+      <div class="envelope-body">
+        <div class="envelope-creases"></div>
+        <div class="polka-dots"></div>
+        <div class="envelope-seal">
+          <svg width="0" height="50" viewBox="0 0 80 80">
+            <defs>
+              <linearGradient id="heartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#cf0433;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#f14973;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M40,70 C40,70 10,50 10,30 C10,15 20,10 27.5,10 C32.5,10 37,12.5 40,17.5 C43,12.5 47.5,10 52.5,10 C60,10 70,15 70,30 C70,50 40,70 40,70 Z"
+              fill="url(#heartGradient)" opacity="0.7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Letter inside -->
+      <div class="letter" id="letter">
+        <div class="letter-content">
+          <p>Click to find out more... 💕</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 2: Valentine Question -->
+  <div class="page" id="page2">
+    <h1 class="question-title">Will you be my<br>Valentine? 💕</h1>
+    <p class="invite-text">Official invite from your boyfriend 💌</p>
+    <div class="buttons-container">
+      <button class="yes-btn" id="yesBtn">YES! 💕</button>
+      <button class="no-btn" id="noBtn">No 😢</button>
+    </div>
+  </div>
+
+  <!-- Page 3: Good Choice -->
+  <div class="page" id="page3">
+    <h1 class="good-choice-title">Good choice 😌</h1>
+    <p class="unlock-text">You just unlocked unlimited hugs, kisses, and cuddles<br>(redeemable very soon I promise)</p>
+
+    <div class="cats-container">
+      <div class="cat-img">🐱💕</div>
+      <div class="cat-img">🐱🐱</div>
+    </div>
+
+    <h2 class="forever-text">Now you're stuck with me forever ∞</h2>
+
+    <p class="wait-text">Wait... do you want to change your mind? 🤔</p>
+
+    <div class="too-late-box">
+      <h2 class="too-late-title">TOO LATE! 😬</h2>
+      <p class="terms-intro">You already said YES, which means:</p>
+      <ul class="terms-list">
+        <li>❌ No take-backs allowed</li>
+        <li>❌ You're legally mine now (I checked)</li>
+        <!-- <li>❌ Every 'no' from now on = 10 extra kisses when we meet</li> -->
+        <li>✅ You're stuck with your boyfriend FOREVER 😈</li>
+      </ul>
+    </div>
+
+    <button class="continue-btn" id="continueBtn">Continue to Date Ideas →</button>
+  </div>
+
+  <!-- Page 4: Virtual Date Ideas -->
+  <div class="page" id="page4">
+    <h1 class="date-ideas-title">Our Virtual Date Ideas 📱</h1>
+
+    <div class="ideas-container">
+      <div class="idea-card">
+        <span class="icon">📺</span>
+        <p>Netflix party + video call </p>
+      </div>
+
+      <div class="idea-card">
+        <span class="icon">🍕</span>
+        <p>Order the same food together & judge each other's eating habits</p>
+      </div>
+
+      <div class="idea-card">
+        <span class="icon">💤</span>
+        <p>Late night talks that somehow turn into sleeping thing</p>
+      </div>
+
+      <div class="idea-card">
+        <span class="icon">🎵</span>
+        <p>Playlist exchange & argue about music taste (you're wrong btw)</p>
+      </div>
+
+      <div class="idea-card">
+        <span class="icon">📸</span>
+        <p>Send me your selfies so I can simp shamelessly 😍</p>
+      </div>
+
+      <div class="idea-card">
+        <span class="icon">🎮</span>
+        <p>Play games together & watch you absolutely destroy me</p>
+      </div>
+
+      <div class="idea-card">
+        <span class="icon">☕</span>
+        <p>Virtual coffee dates where we pretend we're fancy</p>
+      </div>
+    </div>
+
+    <button class="continue-btn" id="memoriesBtn">See Our Favorite Memories →</button>
+  </div>
+
+  <!-- Page 5: Favorite Memories -->
+  <div class="page" id="page5">
+    <h1 class="memories-title">Our Favorite Memories 📸</h1>
+    <p class="subtitle">Click to reveal each memory 💕</p>
+
+    <div class="memories-grid">
+      <div class="memory-card" data-memory="1">
+        <div class="memory-front">
+          <img src="1.jpg" alt="First video call memory" class="memory-image">
+        </div>
+        <div class="memory-back">
+          <p>Our first call where we talked for hours ⏰💕</p>
+        </div>
+      </div>
+
+      <div class="memory-card" data-memory="2">
+        <div class="memory-front">📷</div>
+        <div class="memory-front">
+          <img src="21.png" alt="First video call memory" class="memory-image">
+        </div>
+        <div class="memory-back">
+          <p>That time you made me laugh so hard I couldn't breathe 😂❤️</p>
+        </div>
+      </div>
+
+      <div class="memory-card" data-memory="3">
+        <div class="memory-front">📷</div>
+        <div class="memory-front">
+          <img src="31.jpg" alt="First video call memory" class="memory-image">
+        </div>
+        <div class="memory-back">
+          <p>Every good morning text that makes my day ☀️💕</p>
+        </div>
+      </div>
+
+      <div class="memory-card" data-memory="4">
+        <div class="memory-front">📷</div>
+        <div class="memory-front">
+          <img src="41.jpg" alt="First video call memory" class="memory-image">
+        </div>
+        <div class="memory-back">
+          <p>Late night conversations under the stars 🌙✨</p>
+        </div>
+      </div>
+
+      <div class="memory-card" data-memory="5">
+        <div class="memory-front">📷</div>
+        <div class="memory-front">
+          <img src="51.jpg" alt="First video call memory" class="memory-image">
+        </div>
+        <div class="memory-back">
+          <p>Planning our future together 🏡💑</p>
+        </div>
+      </div>
+
+      <div class="memory-card" data-memory="6">
+        <div class="memory-front">📷</div>
+        <div class="memory-front">
+          <img src="61.jpg" alt="First video call memory" class="memory-image">
+        </div>
+        <div class="memory-back">
+          <p>Every single moment with you 💖∞</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="final-message">
+      <h2>Happy Valentine's Day, my love! 💕</h2>
+      <p>Distance means so little when someone means so much.<br>Can't wait to be with you soon! ❤️</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
