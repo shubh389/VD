@@ -9,6 +9,17 @@
 </head>
 
 <body>
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="mp3.mpeg" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Music Control Button -->
+  <button id="musicToggle" class="music-toggle" aria-label="Toggle music">
+    🔊
+  </button>
+
   <!-- Page 1: Secret Note with Envelope -->
   <div class="page active" id="page1">
     <h1 class="main-title">A Secret Note For You ❤️</h1>
@@ -203,6 +214,41 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    // Background music control
+    const bgMusic = document.getElementById('bgMusic');
+    const musicToggle = document.getElementById('musicToggle');
+    let isPlaying = false;
+
+    // Auto-play music on first user interaction
+    function playMusic() {
+      bgMusic.play().then(() => {
+        isPlaying = true;
+        musicToggle.textContent = '🔊';
+      }).catch(err => {
+        console.log('Autoplay prevented:', err);
+      });
+    }
+
+    // Toggle music on button click
+    musicToggle.addEventListener('click', () => {
+      if (isPlaying) {
+        bgMusic.pause();
+        musicToggle.textContent = '🔇';
+        isPlaying = false;
+      } else {
+        playMusic();
+      }
+    });
+
+    // Start music on first click anywhere
+    document.addEventListener('click', function startMusic() {
+      if (!isPlaying) {
+        playMusic();
+      }
+      document.removeEventListener('click', startMusic);
+    }, { once: true });
+  </script>
 </body>
 
 </html>
