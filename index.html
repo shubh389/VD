@@ -10,7 +10,7 @@
 
 <body>
   <!-- Background Music -->
-  <audio id="bgMusic" loop>
+  <audio id="bgMusic" loop playsinline preload="auto">
     <source src="mp3.mpeg" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
@@ -231,7 +231,21 @@
     }
 
     // Toggle music on button click
-    musicToggle.addEventListener('click', () => {
+    musicToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (isPlaying) {
+        bgMusic.pause();
+        musicToggle.textContent = '🔇';
+        isPlaying = false;
+      } else {
+        playMusic();
+      }
+    });
+
+    // Toggle music on button touch (for mobile)
+    musicToggle.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       if (isPlaying) {
         bgMusic.pause();
         musicToggle.textContent = '🔇';
@@ -242,12 +256,14 @@
     });
 
     // Start music on first click anywhere
-    document.addEventListener('click', function startMusic() {
+    function startMusic() {
       if (!isPlaying) {
         playMusic();
       }
-      document.removeEventListener('click', startMusic);
-    }, { once: true });
+    }
+
+    document.addEventListener('click', startMusic, { once: true });
+    document.addEventListener('touchstart', startMusic, { once: true });
   </script>
 </body>
 
